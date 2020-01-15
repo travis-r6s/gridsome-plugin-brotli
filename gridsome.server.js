@@ -1,5 +1,4 @@
 const glob = require('glob')
-const path = require('path')
 const util = require('util')
 const workerFarm = require('worker-farm')
 const worker = require.resolve('./worker')
@@ -9,11 +8,10 @@ const globAsync = util.promisify(glob)
 function BrotliPlugin (api, options) {
   api.afterBuild(async ({ config }) => {
     const outputDir = config.outputDir || config.outDir
-    const fileBasePath = path.resolve(outputDir)
     const patternExt = (options.extensions.length > 1) ? `{${options.extensions.join(',')}}` : options.extensions[ 0 ]
     const pattern = `**/*.${patternExt}`
 
-    const files = await globAsync(pattern, { cwd: fileBasePath, ignore: '**/*.br', nodir: true })
+    const files = await globAsync(pattern, { cwd: outputDir, ignore: '**/*.br', nodir: true })
     const tmrStart = new Date().getTime()
 
     const compressFile = workerFarm(worker)
