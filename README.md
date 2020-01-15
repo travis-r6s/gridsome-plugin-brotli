@@ -14,7 +14,7 @@ becomes
 
 ## Requirements
 
-This plugin will only generate the compressed files. To see them been served to the client, your Gridsome website should run on a production server that supports Brotli .br-files. The Gridsome development server **does not** serve the compressed versions.
+This plugin will only generate the compressed files. To see them been served to the client, your Gridsome website should run on a production server that supports Brotli (`.br`) files. The Gridsome development server **does not** serve the compressed versions.
 
 ## Installation
 
@@ -22,7 +22,7 @@ With npm:
 
 ```bash
 yarn add gridsome-plugin-brotli # or
-npm install --save gridsome-plugin-brotli
+npm install gridsome-plugin-brotli
 ```
 
 ## Usage
@@ -31,9 +31,7 @@ npm install --save gridsome-plugin-brotli
 ```javascript
 module.exports = {
   plugins: [
-    {
-      use: 'gatsby-plugin-brotli'
-    }
+    'gatsby-plugin-brotli'
   ]
 }
 ```
@@ -48,7 +46,7 @@ module.exports = {
     {
       resolve: 'gridsome-plugin-brotli',
       options: {
-        extensions: ['css', 'html', 'js', 'svg']
+        extensions: ['css', 'html', 'js', 'svg', 'json']
       }
     }
   ]
