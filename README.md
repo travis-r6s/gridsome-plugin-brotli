@@ -5,11 +5,11 @@ Gridsome plugin for preparing brotli-compressed versions of assets.
 > Forked from [gatsby-plugin-brotli](https://github.com/ovhemert/gatsby-plugin-brotli)
 
 ```bash
-/app.7b37c0a7.js
+/app.7b37c0a7.js # 246kb
 ```
 becomes
 ```bash
-/app.7b37c0a7.js.br
+/app.7b37c0a7.js.br # 67kb
 ```
 
 ## Requirements
