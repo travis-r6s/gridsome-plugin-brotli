@@ -30,7 +30,7 @@ npm install gridsome-plugin-brotli
 `gridsome.config.js`
 ```javascript
 module.exports = {
-  plugins: ['gatsby-plugin-brotli']
+  plugins: ['gridsome-plugin-brotli']
 }
 ```
 
