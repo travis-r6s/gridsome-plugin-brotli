@@ -1,6 +1,6 @@
 {
   "name": "gridsome-plugin-brotli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Gridsome plugin for preparing brotli-compressed versions of assets",
   "main": "gridsome.server.js",
   "author": {
