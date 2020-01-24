@@ -42,7 +42,7 @@ By default, only `.css` and `.js` files are compressed, but you can override thi
 module.exports = {
   plugins: [
     {
-      resolve: 'gridsome-plugin-brotli',
+      use: 'gridsome-plugin-brotli',
       options: {
         extensions: ['css', 'html', 'js', 'svg', 'json']
       }
@@ -58,7 +58,7 @@ be saved in the `dist` directory as usual) in a dedicated directory (ex. `dist/b
 module.exports = {
   plugins: [
     {
-      resolve: 'gridsome-plugin-brotli',
+      use: 'gridsome-plugin-brotli',
       options: {
         path: 'brotli'
       }
