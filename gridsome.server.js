@@ -7,6 +7,7 @@ const globAsync = util.promisify(glob)
 
 function BrotliPlugin (api, options) {
   api.afterBuild(async ({ config }) => {
+    console.log('Compressing build with Brotli...')
     const outputDir = config.outputDir || config.outDir
     const patternExt = (options.extensions.length > 1) ? `{${options.extensions.join(',')}}` : options.extensions[ 0 ]
     const pattern = `**/*.${patternExt}`
