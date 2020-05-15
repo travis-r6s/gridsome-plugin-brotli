@@ -71,4 +71,4 @@ module.exports = {
 
 Licensed under [MIT](./LICENSE).
 
-_NOTE: This plugin only generates output when run in `production` mode! To test, run: `gatsby build && gatsby serve`_
+_NOTE: This plugin only generates output when run in `production` mode! To test, run: `gridsome build` and view the `dist` folder._
