@@ -24,8 +24,21 @@ function BrotliPlugin (api, options) {
     const results = await Promise.allSettled(compress)
     workerFarm.end(compressFile)
 
-    const tmrEnd = new Date().getTime()
-    console.log(`Brotli compressed ${files.length} files in ${(tmrEnd - tmrStart) / 1000} s`)
+    const tmrEnd = new Date().getTime();
+
+    const failedFiles = results
+      .map((result, index) => ({ result, file: files[index] }))
+      .filter((result) => result.status === 'rejected');
+    const failReport = failedFiles.length
+      ? '\nThese files failed:'
+        + failedFiles.map(({ file, result }) => `\nFile: ${file} \nReason: ${result.reason}`).join('\n') 
+      : '';
+
+    const compressedCount = files.length - failedFiles.length;
+    console.log(
+      `Brotli compressed ${compressedCount}/${files.length} files in ${(tmrEnd - tmrStart) / 1000} s`
+      + failReport
+    );
   })
 }
 
