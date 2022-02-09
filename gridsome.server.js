@@ -21,7 +21,7 @@ function BrotliPlugin (api, options) {
         compressFile(file, { ...options, outputDir }, err => err ? reject(err) : resolve())
       })
     })
-    await Promise.all(compress)
+    const results = await Promise.allSettled(compress)
     workerFarm.end(compressFile)
 
     const tmrEnd = new Date().getTime()
