@@ -1,5 +1,11 @@
 # gridsome-plugin-brotli
 
+---
+
+> This plugin has been deprecated in favour of https://github.com/agaengel/gridsome-plugin-precompress, and will receive no further updates.
+
+---
+
 Gridsome plugin for preparing brotli-compressed versions of assets.
 
 > Forked from [gatsby-plugin-brotli](https://github.com/ovhemert/gatsby-plugin-brotli)
